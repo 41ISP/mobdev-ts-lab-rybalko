@@ -1,12 +1,20 @@
 import PaymentForm from "../components/PaymentForm"
 import PaymentItem from "../components/PaymentItem"
 import { formatMoney } from "../format"
+import { usePaymentsStore } from "../store"
 
 export default function PaymentsPage() {
-    const sorted: any[] = [1]
-    const total = 0
-    const paid = 0
-
+    const {items} = usePaymentsStore()
+   
+    const total = items.reduce((sum, e) => sum + e.amount, 0)
+    const paid = items
+        .filter((p) => p.paid)
+        .reduce((sum, p) => sum + p.amount, 0)
+    const sorted = [...items].sort(
+        (a, b) =>
+            Number(a.paid) - Number(b.paid) ||
+            a.due.localeCompare(b.due)
+    )
     return (
         <>
             <section className="sum" aria-label="Итоги месяца">
@@ -34,7 +42,7 @@ export default function PaymentsPage() {
             ) : (
                 <ul className="list">
                     {sorted.map((p) => (
-                        <PaymentItem key={p.id} />
+                        <PaymentItem payment={p} key={p.id} />
                     ))}
                 </ul>
             )}
