@@ -1,17 +1,1 @@
-{
-    "root": [
-        "./src/App.tsx",
-        "./src/categories.ts",
-        "./src/format.ts",
-        "./src/main.tsx",
-        "./src/store.ts",
-        "./src/types.ts",
-        "./src/components/Layout.tsx",
-        "./src/components/PaymentForm.tsx",
-        "./src/components/PaymentItem.tsx",
-        "./src/pages/CategoriesPage.tsx",
-        "./src/pages/PaymentsPage.tsx",
-        "./vite.config.ts"
-    ],
-    "version": "5.6.3"
-}
+{"root":["./src/App.tsx","./src/categories.ts","./src/format.ts","./src/main.tsx","./src/store.ts","./src/types.ts","./src/components/Layout.tsx","./src/components/PaymentForm.tsx","./src/components/PaymentItem.tsx","./src/pages/CategoriesPage.tsx","./src/pages/PaymentsPage.tsx","./vite.config.ts"],"version":"5.6.3"}
